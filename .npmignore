@@ -1,0 +1,12 @@
+.github
+.eslintrc
+jest.config.js
+tsconfig.json
+src
+index.ts
+**/__tests__
+.idea
+webpack.config.js
+
+!build/src
+!src/**/*.d.ts

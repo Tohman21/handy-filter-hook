@@ -1,0 +1,76 @@
+{
+  "extends": "airbnb-typescript/base",
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "require-jsdoc-except"],
+  "parserOptions": { "project": "./tsconfig.json" },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "rules": {
+    "@typescript-eslint/lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "camelcase": "off",
+    "class-methods-use-this": "off",
+    "consistent-return": "off",
+    "guard-for-in": "off",
+    "import/extensions": "off",
+    "import/named": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/no-named-as-default": "off",
+    "import/no-unresolved": "off",
+    "import/prefer-default-export": "off",
+    "function-paren-newline": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/control-has-associated-label": "off",
+    "jsx-a11y/interactive-supports-focus": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/media-has-caption": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    "jsx-a11y/tabindex-no-positive": "off",
+    "linebreak-style": 0,
+    "max-len": [1, 120, 4],
+    "no-console": "error",
+    "no-extra-boolean-cast": "off",
+    "no-extra-semi": "error",
+    "no-labels": "off",
+    "no-nested-ternary": "off",
+    "no-param-reassign": "off",
+    "no-restricted-globals": "off",
+    "no-restricted-syntax": "off",
+    "no-return-await": "off",
+    "no-throw-literal": "off",
+    "no-trailing-spaces": "off",
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }],
+    "no-unused-expressions": "off",
+    "no-unused-labels": "off",
+    "object-curly-newline": "off",
+    "operator-linebreak": "off",
+    "prefer-destructuring": ["error", { "object": true, "array": false }],
+    "require-jsdoc-except/require-jsdoc": [
+      "error",
+      {
+        "require": {
+          "ArrowFunctionExpression": true,
+          "ClassDeclaration": true,
+          "FunctionDeclaration": true,
+          "FunctionExpression": true,
+          "MethodDefinition": true
+        },
+        "ignore": [
+          "componentDidMount",
+          "componentDidUpdate",
+          "componentWillUnmount",
+          "constructor",
+          "getDerivedStateFromProps",
+          "getSnapshotBeforeUpdate",
+          "render",
+          "shouldComponentUpdate"
+        ]
+      }
+    ],
+    "spaced-comment": ["error", "always"]
+  }
+}
