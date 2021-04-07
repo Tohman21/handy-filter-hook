@@ -12,7 +12,7 @@ describe('useFilter tests', () => {
 
   beforeEach(() => {
     fixture = fixtures.DATA;
-    ({ result } = renderHook(() => useFilter(fixture)));
+    ({ result } = renderHook(() => useFilter({ init: fixture })));
     setCondition = result.current[1];
     setData = result.current[2];
   });
@@ -76,13 +76,13 @@ describe('useFilter tests', () => {
     it('should filter the data when changing only one condition which was set with a key', () => {
       act(() => {
         setCondition(gt('num', 100), 'key1');
-        setCondition(gt('num', 200), 'key2');
+        setCondition(gt('num', 200), 2);
       });
 
       expect(result.current[0]).toStrictEqual([fixture[4]]);
 
       act(() => {
-        setCondition(gt('num', '__any__'), 'key2');
+        setCondition(gt('num', '__any__'), 2);
       });
 
       expect(result.current[0]).toStrictEqual([fixture[3], fixture[4]]);
@@ -93,7 +93,7 @@ describe('useFilter tests', () => {
     describe('join tests', () => {
       it('should join data with logical "and" by default', () => {
         act(() => {
-          setCondition(gt('num', 100), 'key1');
+          setCondition(gt('num', 100), 1);
         });
 
         expect(result.current[0]).toStrictEqual([fixture[3], fixture[4]]);
@@ -106,7 +106,7 @@ describe('useFilter tests', () => {
       });
 
       it('should join data with logical "and" when option is set to "and"', () => {
-        ({ result } = renderHook(() => useFilter(fixture, { join: 'and' })));
+        ({ result } = renderHook(() => useFilter({ init: fixture, options: { join: 'and' } })));
         setCondition = result.current[1];
 
         act(() => {
@@ -116,14 +116,14 @@ describe('useFilter tests', () => {
         expect(result.current[0]).toStrictEqual([fixture[3], fixture[4]]);
 
         act(() => {
-          setCondition(lt('num', 400), 'key2');
+          setCondition(lt('num', 400), 2);
         });
 
         expect(result.current[0]).toStrictEqual([fixture[3]]);
       });
 
       it('should join data with logical "or" when option is set to "or"', () => {
-        ({ result } = renderHook(() => useFilter(fixture, { join: 'or' })));
+        ({ result } = renderHook(() => useFilter({ init: fixture, options: { join: 'or' } })));
         setCondition = result.current[1];
 
         act(() => {

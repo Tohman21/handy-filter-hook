@@ -1,8 +1,9 @@
 {
   "name": "handy-filter-hook",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "main": "build/index.ts",
   "types": "build/index.d.ts",
+  "description": "Handy Filter Hook is a react hook for Handy Filter",
   "author": "Tohman21",
   "license": "MIT",
   "homepage": "https://github.com/Tohman21/handy-filter-hook",
@@ -12,7 +13,7 @@
     "handy",
     "filter",
     "react",
-    "hook"
+    "hooks"
   ],
   "repository": {
     "type": "git",
@@ -26,8 +27,8 @@
     "test": "jest --watchAll"
   },
   "peerDependencies": {
-    "handy-filter": "^1.0.9",
-    "react": "^17.0.2"
+    "handy-filter": ">=1.0.9",
+    "react": ">=16.9.0"
   },
   "devDependencies": {
     "@testing-library/react-hooks": "^5.1.1",

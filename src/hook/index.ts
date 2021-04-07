@@ -1,12 +1,12 @@
 import { useCallback, useMemo, useState } from 'react';
-import Filter, { Condition, CheckableValue } from 'handy-filter';
+import Filter, { Condition } from 'handy-filter';
 
 import { JOIN_FUNC_MAP } from './constants';
-import { HookOptions } from './types';
+import { HookProps } from './types';
 
-export default (initData: CheckableValue[] = [], options: HookOptions = {}) => {
+export default ({ init = [], options = {} }: HookProps) => {
   const [conditions, setConditions] = useState<{ [key: string]: Condition }>({});
-  const [data, setData] = useState(initData);
+  const [data, setData] = useState(init);
 
   const filteredData = useMemo(() => {
     const mergeFunc = JOIN_FUNC_MAP[options.join || 'and'];
@@ -15,7 +15,7 @@ export default (initData: CheckableValue[] = [], options: HookOptions = {}) => {
     return new Filter(condition).filter(data);
   }, [conditions, data, options.join]);
 
-  const setCondition = useCallback((condition: Condition, key: string = '__default__') => {
+  const setCondition = useCallback((condition: Condition, key: string | number = '__default__') => {
     setConditions((prevState) => ({ ...prevState, [key]: condition }));
   }, []);
 
