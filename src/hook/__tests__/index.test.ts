@@ -17,6 +17,13 @@ describe('useFilter tests', () => {
     setData = result.current[2];
   });
 
+  describe('constructor tests', () => {
+    it('should accept empty props', () => {
+      ({ result } = renderHook(() => useFilter()));
+      expect(result.current[0]).toStrictEqual(undefined);
+    });
+  });
+
   describe('setData tests', () => {
     it('should set data as hook parameter', () => {
       expect(result.current[0]).toStrictEqual(fixture);

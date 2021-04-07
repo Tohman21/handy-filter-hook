@@ -1,6 +1,6 @@
 {
   "name": "handy-filter-hook",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "description": "Handy Filter Hook is a react hook for Handy Filter",
