@@ -31,6 +31,11 @@ module.exports = {
     library: { type: 'commonjs2' }
   },
 
+  externals: {
+    react: 'react',
+    'handy-filter': 'handy-filter',
+  },
+
   watchOptions: {
     ignored: '/node_modules/',
   },

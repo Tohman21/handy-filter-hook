@@ -1,4 +1,4 @@
-# Handy Filter Hook [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Tohman21/handy-filter-hook/blob/master/LICENSE)
+# Handy Filter Hook [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Tohman21/handy-filter-hook/blob/master/LICENSE) [![npm version](https://img.shields.io/npm/v/handy-filter-hook)](https://www.npmjs.com/package/handy-filter-hook)
 
 
 ## Overview
