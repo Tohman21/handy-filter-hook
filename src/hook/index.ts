@@ -1,10 +1,10 @@
 import { useCallback, useMemo, useState } from 'react';
-import Filter, { Condition } from 'handy-filter';
+import Filter, { CheckableValue, Condition } from 'handy-filter';
 
 import { JOIN_FUNC_MAP } from './constants';
 import { HookProps } from './types';
 
-export default ({ init, options = {} }: HookProps = {}) => {
+export default <InitType extends CheckableValue>({ init, options = {} }: HookProps<InitType> = {}) => {
   const [conditions, setConditions] = useState<{ [key: string]: Condition }>({});
   const [data, setData] = useState(init);
 
